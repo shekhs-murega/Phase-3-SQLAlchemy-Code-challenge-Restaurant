@@ -1,4 +1,4 @@
-                          # RESTAURANTS
+# RESTAURANTS
 
 ![photo snippet](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdmx3NDYwdWZubHYxMHRpbGdxc3U3YnhmcmtsZXl2cnM5bmVyeXY4MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UigO8Uqo96gCdmhG4z/giphy.gif)
 
