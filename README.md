@@ -75,9 +75,9 @@ The provided `seeds.py` file allows you to create sample data to test your model
 
 Here are some example queries and methods that you can use with this project:
 ### Query the count of entities
-session.query(Restaurant).count()
-session.query(Customer).count()
-session.query(Review).count()
+- `session.query(Restaurant).count()`
+- `session.query(Customer).count()`
+- `session.query(Review).count()`
 
 ### Query for a specific Restaurant, Customer, or Review
 restaurant = session.query(Restaurant).first()
