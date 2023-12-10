@@ -2,6 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from models import Base, Restaurant, Review, Customer
 
+
 # Create an SQLite database (you can replace 'sqlite:///your_database.db' with your preferred database URL).
 engine = create_engine('sqlite:///restaurants.db')
 

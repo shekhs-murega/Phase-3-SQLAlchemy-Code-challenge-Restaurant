@@ -1,8 +1,10 @@
 from faker import Faker
 import random
-from models import engine, session, Restaurant, Customer, Review
+import ipdb  # Import ipdb here
+from models import session, Restaurant, Customer, Review
 
 if __name__ == '__main__':
+    ipdb.set_trace()
     session.query(Restaurant).delete()
     session.query(Customer).delete()
     session.query(Review).delete()
@@ -32,28 +34,23 @@ if __name__ == '__main__':
 
         session.commit()
 
+    reviews = []
+    star_ratings = [0, 1, 2, 3, 4, 5]
 
-reviews = []
-star_ratings = [0, 1, 2, 3, 4, 5]
+    for restaurant in restaurants:
+        for i in range(random.randint(1, 50)):
+            customer = random.choice(customers)
 
-for restaurant in restaurants:
-    for i in range(random.randint(1,50)):
-        customer = random.choice(customers)
-    
+            star_rating = random.choice(star_ratings)
+            print(f"Star Rating: {star_rating}")
 
-        star_rating = random.choice(star_ratings)
-        print(f"Star Rating: {star_rating}")
-
-        review = Review(
+            review = Review(
                 star_rating=star_rating,
                 restaurant_id=restaurant.id,
                 customer_id=customer.id
             )
-        reviews.append(review)
+            reviews.append(review)
 
-# for review in reviews:
-    session.add(review)
-
-
-session.commit()
-session.close()
+    session.add_all(reviews)
+    session.commit()
+    session.close()
