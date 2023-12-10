@@ -74,7 +74,23 @@ The provided `seeds.py` file allows you to create sample data to test your model
 ## Example Queries
 
 Here are some example queries and methods that you can use with this project:
+# Query the count of entities
+session.query(Restaurant).count()
+session.query(Customer).count()
+session.query(Review).count()
 
+# Query for a specific Restaurant, Customer, or Review
+restaurant = session.query(Restaurant).first()
+customer = session.query(Customer).first()
+review = session.query(Review).first()
+
+# Check relationships between entities
+print(restaurant.reviews)  # Get all reviews associated with a restaurant
+print(customer.reviews)    # Get all reviews associated with a customer
+print(review.customer)     # Get the customer associated with a review
+print(review.restaurant)   # Get the restaurant associated with a review
+
+# General queries 
 - `session.query(Customer).first().restaurants`: Retrieves a list of restaurants for the first customer in the database based on seed data.
 - `session.query(Review).first().customer`: Returns the customer for the first review in the database.
 - `session.query(Restaurant).first().reviews()`: Gets all reviews for a specific restaurant.
@@ -82,12 +98,8 @@ Here are some example queries and methods that you can use with this project:
 - `session.query(Customer).first().reviews()`: Gets all reviews left by a specific customer.
 - `session.query(Customer).first().restaurants()`: Retrieves all restaurants reviewed by a specific customer.
 - `session.query(Customer).first().full_name()`: Returns the full name of the first customer in Western style.
-- `session.query(Customer).first().favorite_restaurant()`: Retrieves the restaurant instance with the highest star rating from the first customer.
-- `session.query(Customer).first().add_review(restaurant_instance, rating)`: Adds a new review for a restaurant by the first customer.
 - `session.query(Customer).first().delete_reviews(restaurant_instance)`: Removes all reviews by the first customer for a specific restaurant.
-- `session.query(Review).first().full_review()`: Generates a formatted review string for the first review in the database.
 - `Restaurant.fanciest()`: Returns a restaurant instance for the restaurant with the highest price.
-- `session.query(Restaurant).first().all_reviews()`: Retrieves a list of formatted review strings for the first restaurant's reviews.
 
 ## Contributing
 
