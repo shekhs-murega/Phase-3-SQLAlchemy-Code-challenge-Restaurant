@@ -80,15 +80,15 @@ Here are some example queries and methods that you can use with this project:
 - `session.query(Review).count()`
 
 ### Query for a specific Restaurant, Customer, or Review
-restaurant = session.query(Restaurant).first()
-customer = session.query(Customer).first()
-review = session.query(Review).first()
+- `restaurant = session.query(Restaurant).first()`
+- `customer = session.query(Customer).first()`
+- `review = session.query(Review).first()`
 
 ### Check relationships between entities
-print(restaurant.reviews)  # Get all reviews associated with a restaurant
-print(customer.reviews)    # Get all reviews associated with a customer
-print(review.customer)     # Get the customer associated with a review
-print(review.restaurant)   # Get the restaurant associated with a review
+- `print(restaurant.reviews)`: Get all reviews associated with a restaurant.
+- `print(customer.reviews)`: Get all reviews associated with a customer.
+- `print(review.customer)`: Get the customer associated with a review.
+- `print(review.restaurant)`: Get the restaurant associated with a review.
 
 ### General queries 
 - `session.query(Customer).first().restaurants`: Retrieves a list of restaurants for the first customer in the database based on seed data.
